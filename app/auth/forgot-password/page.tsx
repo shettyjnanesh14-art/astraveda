@@ -29,9 +29,8 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="pt-20 min-h-screen flex items-center">
-      <Section>
-        <div className="max-w-md mx-auto">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-charcoal-50 to-primary-50">
+      <div className="w-full max-w-md px-4">
           <Card padding="lg">
             {!emailSent ? (
               <>
@@ -115,7 +114,6 @@ export default function ForgotPasswordPage() {
             )}
           </Card>
         </div>
-      </Section>
     </div>
   );
 }
