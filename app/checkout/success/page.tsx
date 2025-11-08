@@ -1,20 +1,20 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { CheckCircle, ArrowRight, Download } from 'lucide-react';
 
-export default function CheckoutSuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('order');
 
   useEffect(() => {
-    // Track conversion
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'purchase', {
+    // Track conversion (if Google Analytics is configured)
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'purchase', {
         transaction_id: orderId,
         value: 0, // Add actual value
         currency: 'INR',
@@ -108,6 +108,18 @@ export default function CheckoutSuccessPage() {
         </div>
       </Section>
     </div>
+  );
+}
+
+export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500"></div>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   );
 }
 
