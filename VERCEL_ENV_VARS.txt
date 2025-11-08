@@ -1,0 +1,13 @@
+=== Copy these to Vercel Environment Variables ===
+
+Variable Name: NEXT_PUBLIC_SUPABASE_URL
+Value: https://nzthzhclsuswivbxmvetr.supabase.co
+
+Variable Name: NEXT_PUBLIC_SUPABASE_ANON_KEY
+Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dGhoemNsdXN3aXZieG12ZXRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0OTU3NjIsImV4cCI6MjA3ODA3MTc2Mn0.7cfYa9FJ4R03IWFSXdFzPixCQ6uFe_gZvjz9vP-ad9g
+
+Variable Name: SUPABASE_SERVICE_ROLE_KEY
+Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dGhoemNsdXN3aXZieG12ZXRyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjQ5NTc2MiwiZXhwIjoyMDc4MDcxNzYyfQ.myxYGFS_M8Ix65So0B3XPMMBvJ0t0g8TYetRLt2OvEY
+
+⚠️ IMPORTANT: Add these to Production, Preview, AND Development environments!
+
