@@ -2,6 +2,7 @@ import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
+import CheckoutButton from '@/components/payment/CheckoutButton';
 import { Check, ArrowRight } from 'lucide-react';
 
 export const metadata = {
@@ -101,6 +102,11 @@ const sampleCreatives = [
   { type: 'Story Series', description: 'Behind-the-scenes restaurant content' },
   { type: 'Announcement Post', description: 'New course launch for EdTech' },
 ];
+
+// Helper function to extract price from string
+function extractPrice(priceStr: string): number {
+  return parseInt(priceStr.replace(/[₹,]/g, ''));
+}
 
 export default function SocialMediaPage() {
   return (
@@ -276,12 +282,22 @@ export default function SocialMediaPage() {
                 ))}
               </ul>
 
-              <Button
-                href="/pricing"
+              <CheckoutButton
+                serviceId="social-media"
+                serviceName="Social Media Management"
+                packageName={pkg.name}
+                packagePrice={extractPrice(pkg.price)}
+                features={pkg.features}
                 variant={pkg.popular ? 'primary' : 'outline'}
                 fullWidth
+              />
+              <Button
+                href="/pricing"
+                variant="ghost"
+                fullWidth
+                className="mt-2 text-sm"
               >
-                Get Started
+                or Customize Your Plan
               </Button>
             </Card>
           ))}
