@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '@/components/ui/Button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, User as UserIcon } from 'lucide-react';
+import { useAuth } from '@/lib/auth-context';
+import { getAvatarUrl } from '@/lib/auth-helpers';
 
 const navLinks = [
   {
@@ -47,6 +49,8 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,14 +117,64 @@ export default function Navigation() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/portal">
-              <button className="text-charcoal-900 hover:text-primary-500 font-medium transition-colors">
-                Client Portal
-              </button>
-            </Link>
-            <Button href="/contact" variant="primary" size="sm">
-              Get Started
-            </Button>
+            {user ? (
+              <div className="relative">
+                <button
+                  onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  className="flex items-center space-x-2 p-2 hover:bg-charcoal-100 rounded-lg transition-colors"
+                >
+                  <img
+                    src={getAvatarUrl(user)}
+                    alt="Profile"
+                    className="w-8 h-8 rounded-full"
+                  />
+                  <ChevronDown className="w-4 h-4 text-charcoal-600" />
+                </button>
+
+                {userMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border border-charcoal-100 overflow-hidden"
+                  >
+                    <Link
+                      href="/portal"
+                      className="block px-4 py-3 text-sm text-charcoal-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                      onClick={() => setUserMenuOpen(false)}
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      href="/portal/settings"
+                      className="block px-4 py-3 text-sm text-charcoal-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                      onClick={() => setUserMenuOpen(false)}
+                    >
+                      Settings
+                    </Link>
+                    <button
+                      onClick={() => {
+                        setUserMenuOpen(false);
+                        signOut();
+                      }}
+                      className="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                    >
+                      Sign Out
+                    </button>
+                  </motion.div>
+                )}
+              </div>
+            ) : (
+              <>
+                <Link href="/auth/login">
+                  <button className="text-charcoal-900 hover:text-primary-500 font-medium transition-colors">
+                    Sign In
+                  </button>
+                </Link>
+                <Button href="/contact" variant="primary" size="sm">
+                  Get Started
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}

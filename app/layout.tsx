@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import { AuthProvider } from "@/lib/auth-context";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
@@ -29,20 +30,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body className="font-sans">
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            duration: 4000,
-            style: {
-              background: '#1a1a1a',
-              color: '#fff',
-              borderRadius: '8px',
-            },
-          }}
-        />
+        <AuthProvider>
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: '#1a1a1a',
+                color: '#fff',
+                borderRadius: '8px',
+              },
+            }}
+          />
+        </AuthProvider>
       </body>
     </html>
   );

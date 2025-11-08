@@ -28,6 +28,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# Supabase credentials (keep private!)
+SUPABASE_CREDENTIALS.md
+
 # vercel
 .vercel
 
