@@ -221,7 +221,7 @@ export async function generateQuotationPDF(data: QuotationData): Promise<Blob> {
   // Footer
   doc.setFontSize(10);
   doc.setTextColor(150, 150, 150);
-  doc.text('AstraVeda | hello@astraveda.com | +91 98765 43210', 20, pageHeight - 10);
+  doc.text('AstraVeda | hello@astraveda.io | +91 86600 25993 | Udupi, India', 20, pageHeight - 10);
 
   // Generate blob
   return doc.output('blob');

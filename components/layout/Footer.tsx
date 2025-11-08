@@ -58,17 +58,17 @@ export default function Footer() {
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="mailto:hello@astraveda.com" className="flex items-center text-charcoal-300 hover:text-primary-500 transition-colors">
+              <a href="mailto:hello@astraveda.io" className="flex items-center text-charcoal-300 hover:text-primary-500 transition-colors">
                 <Mail className="w-5 h-5 mr-2" />
-                hello@astraveda.com
+                hello@astraveda.io
               </a>
-              <a href="tel:+919876543210" className="flex items-center text-charcoal-300 hover:text-primary-500 transition-colors">
+              <a href="tel:+918660025993" className="flex items-center text-charcoal-300 hover:text-primary-500 transition-colors">
                 <Phone className="w-5 h-5 mr-2" />
-                +91 98765 43210
+                +91 86600 25993
               </a>
               <div className="flex items-start text-charcoal-300">
                 <MapPin className="w-5 h-5 mr-2 mt-1 flex-shrink-0" />
-                <span>Bangalore, India</span>
+                <span>Udupi, India</span>
               </div>
             </div>
 

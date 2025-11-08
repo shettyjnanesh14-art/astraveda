@@ -11,20 +11,20 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@astraveda.com',
-    href: 'mailto:hello@astraveda.com',
+    value: 'hello@astraveda.io',
+    href: 'mailto:hello@astraveda.io',
   },
   {
     icon: Phone,
     title: 'Phone',
-    value: '+91 98765 43210',
-    href: 'tel:+919876543210',
+    value: '+91 86600 25993',
+    href: 'tel:+918660025993',
   },
   {
     icon: MapPin,
     title: 'Location',
-    value: 'Bangalore, India',
-    href: '#',
+    value: 'Udupi, India',
+    href: 'https://maps.google.com/?q=Udupi,India',
   },
 ];
 
