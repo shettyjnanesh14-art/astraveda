@@ -1,0 +1,52 @@
+=== Complete Environment Variables for Vercel Deployment ===
+
+⚠️  Add ALL of these to Vercel when deploying!
+Select: ✅ Production ✅ Preview ✅ Development for each
+
+──────────────────────────────────────────────────────────────
+
+Variable Name: NEXT_PUBLIC_SUPABASE_URL
+Value: https://nzthzhclsuswivbxmvetr.supabase.co
+
+──────────────────────────────────────────────────────────────
+
+Variable Name: NEXT_PUBLIC_SUPABASE_ANON_KEY
+Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dGhoemNsdXN3aXZieG12ZXRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0OTU3NjIsImV4cCI6MjA3ODA3MTc2Mn0.7cfYa9FJ4R03IWFSXdFzPixCQ6uFe_gZvjz9vP-ad9g
+
+──────────────────────────────────────────────────────────────
+
+Variable Name: SUPABASE_SERVICE_ROLE_KEY
+Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dGhoemNsdXN3aXZieG12ZXRyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjQ5NTc2MiwiZXhwIjoyMDc4MDcxNzYyfQ.myxYGFS_M8Ix65So0B3XPMMBvJ0t0g8TYetRLt2OvEY
+
+──────────────────────────────────────────────────────────────
+
+Variable Name: NEXT_PUBLIC_SITE_URL
+Value: https://astraveda.io
+
+──────────────────────────────────────────────────────────────
+
+Variable Name: NEXT_PUBLIC_RAZORPAY_KEY_ID
+Value: rzp_live_RdHsZLsbWX3ub0
+
+──────────────────────────────────────────────────────────────
+
+Variable Name: RAZORPAY_KEY_SECRET
+Value: Ytd3NW1m2gOZXBDJXDlGophZ
+
+──────────────────────────────────────────────────────────────
+
+⚠️  IMPORTANT SECURITY NOTES:
+
+1. SUPABASE_SERVICE_ROLE_KEY - Keep private! Server-side only!
+2. RAZORPAY_KEY_SECRET - Keep private! Server-side only!
+3. NEXT_PUBLIC_* variables are safe to expose (client-side)
+4. Live Razorpay keys = REAL PAYMENTS! Money will be charged!
+
+📋 TOTAL: 6 environment variables to add in Vercel
+
+✅ All keys are configured in .env.local
+✅ Ready to copy-paste into Vercel dashboard
+
+🚀 When deploying to Vercel:
+   Settings → Environment Variables → Add each one above
+

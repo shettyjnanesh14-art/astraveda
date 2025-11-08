@@ -1,0 +1,27 @@
+=== Razorpay LIVE Keys for Vercel ===
+
+⚠️  THESE ARE LIVE KEYS - REAL PAYMENTS!
+
+Add these to Vercel Environment Variables:
+
+Variable Name: NEXT_PUBLIC_RAZORPAY_KEY_ID
+Value: rzp_live_RdHsZLsbWX3ub0
+Environment: ✅ Production ✅ Preview ✅ Development
+
+Variable Name: RAZORPAY_KEY_SECRET  
+Value: Ytd3NW1m2gOZXBDJXDlGophZ
+Environment: ✅ Production ✅ Preview ✅ Development
+
+⚠️  IMPORTANT NOTES:
+
+1. These are LIVE keys - real money will be processed
+2. Keep RAZORPAY_KEY_SECRET private (never expose in browser)
+3. NEXT_PUBLIC_RAZORPAY_KEY_ID is safe to expose (public key)
+4. Test thoroughly before processing real payments
+5. Enable webhooks in Razorpay dashboard for production
+
+📊 Razorpay Dashboard:
+https://dashboard.razorpay.com
+
+🔐 Keep these keys secure!
+
